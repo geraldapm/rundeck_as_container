@@ -1,0 +1,14 @@
+version: "3"
+services:
+  rundeck:
+    container_name: rundeck-ansible
+    image: geraldapm/rundeck-ansible:latest
+    ports:
+      - 4440:4440
+    environment:
+      RUNDECK_GRAILS_URL: http://localhost:4440
+  gitbucket:
+    container_name: git_bucket
+    image: gitbucket/gitbucket
+    ports:
+      - 8080:8080
